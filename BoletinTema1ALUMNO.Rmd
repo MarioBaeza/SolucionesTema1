@@ -166,7 +166,8 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
 2.  La funcion **qqPlot** del paquete **car** puede ser utilizada para determinar gráficamente si una serie de puntos siguen una distribución de datos Gaussiana. Si las muestras están dentro de las líneas discontinuas podemos indicar que siguen una distribución Gaussiana con un 95 % de confianza. Utilizando esta función representa el logaritmo neperiano (**log**) del peso del cerebro (**brain weigths**) del registro de datos **mammals** del paquete **MASS** y conjunto de datos **Animals2** de la librería **robustbase**. ¿Presentan el mismo comportamiento ?.¿Podríamos decir que siguen una distribución Gaussiana ?
 
 ```{r}
-
+qqPlot(log(mammals$brain))
+qqPlot(log(Animals2$brain))
 
 ```
 
@@ -177,7 +178,15 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
     c.  Determina el número de librerías que tienes instaladas.
 
     ```{r}
+libReturn <- library()
+libReturn
+#length(libReturn)
+libReturn[[2]] [1:5]
 
+
+    ```
+```{r}
+head(libReturn$results, n=5)
 
 
 
@@ -197,10 +206,39 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
     d.  Utiliza la función **summary**, sobre **cabbages** y **Chile** y observa como, además de otros estadísticos, también devuelve el número de valores perdidos de cada variable.
 
 ```{r}
+head(cabbages)
 
+dim(cabbages)
 
+tail(cabbages)
 
+glimpse(cabbages)
 
+str(cabbages)
+
+any(is.na(cabbages))
+
+colSums(sapply(cabbages, is.na))
+
+summary(cabbages)
+
+head(Chile)
+
+dim(Chile)
+
+tail(Chile)
+
+glimpse(Chile)
+
+str(Chile)
+
+any(is.na(Chile))
+
+colSums(sapply(Chile, is.na))
+
+summary(Chile)
+
+```
 
 
 
