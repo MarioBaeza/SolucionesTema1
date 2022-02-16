@@ -92,15 +92,24 @@ b.  Usa las funciones **dim, head, tail, str** para una primera visión de los c
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
-
-
-
-
-
-
-
-
-
+#a)
+data(mammals)
+df_m <- mammals
+df_a <- Animals2
+# En el data frame de Animals2 hay 65 registros y 2 variables y en el de mammals hay 62 registros  2 variables.
+#b)
+dim(mammals)
+head(mammals)
+tail(mammals)
+str(mammals)
+dim(Animals2)
+head(Animals2)
+tail(Animals2)
+str(Animals2)
+summarise(df_m)
+#c)
+rownames(df_m)
+colnames(df_m)
 
 
 
@@ -114,7 +123,8 @@ c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
 
 ```{r}
-
+commonAnimals <- intersect(df_m, df_a)
+rownames(commonAnimals)
 
 
 
@@ -125,9 +135,12 @@ d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los 
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
 
 ```{r}
+diferentes_m <- setdiff(rownames(df_m), rownames(df_a))
+diferentes_m
 
-
-
+            
+diferentes_a <- setdiff(rownames(df_a), rownames(df_m))
+diferentes_a
 
 
 
@@ -136,7 +149,7 @@ e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. �
 e.  Determina las diferencia entre los animales que no aparecen en ambos conjuntos.
 
 ```{r}
-
+#Los animales que no aparecen en mabos conjuntos es porque no están bien escritos
 
 
 
